@@ -1,0 +1,74 @@
+23:18:44 **** Incremental Build of configuration Debug for project stm32l467_bootloader ****
+make all 
+Building file: ../Src/bootloaderCommands.c
+Invoking: MCU GCC Compiler
+C:\Users\emirs\Desktop\STM32 CAN bootloader\stm32l467_bootloader\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32L476xx -I"C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Inc" -I"C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Drivers/STM32L4xx_HAL_Driver/Inc" -I"C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Drivers/CMSIS/Device/ST/STM32L4xx/Include" -I"C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/bootloaderCommands.d" -MT"Src/bootloaderCommands.o" -o "Src/bootloaderCommands.o" "../Src/bootloaderCommands.c"
+../Src/bootloaderCommands.c: In function 'isUserButtonPushed':
+../Src/bootloaderCommands.c:32:12: warning: pointer targets in passing argument 1 of 'printMsg' differ in signedness [-Wpointer-sign]
+   printMsg("Note: User Button has been pushed\r\n"
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Inc/bootloaderCommands.h:14:0,
+                 from ../Src/bootloaderCommands.c:9:
+C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Inc/comPort.h:23:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void printMsg(uint8_t *frmt, ...);
+      ^~~~~~~~
+../Src/bootloaderCommands.c:38:12: warning: pointer targets in passing argument 1 of 'printMsg' differ in signedness [-Wpointer-sign]
+   printMsg("Note: User Button has not been pushed\r\n"
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Inc/bootloaderCommands.h:14:0,
+                 from ../Src/bootloaderCommands.c:9:
+C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Inc/comPort.h:23:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void printMsg(uint8_t *frmt, ...);
+      ^~~~~~~~
+../Src/bootloaderCommands.c: In function 'bootLoaderJumpToUserApp':
+../Src/bootloaderCommands.c:55:11: warning: pointer targets in passing argument 1 of 'printMsg' differ in signedness [-Wpointer-sign]
+  printMsg("BL_DEBUG_MSG: bootLoaderJumpToUserApp \r\n");
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Inc/bootloaderCommands.h:14:0,
+                 from ../Src/bootloaderCommands.c:9:
+C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Inc/comPort.h:23:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void printMsg(uint8_t *frmt, ...);
+      ^~~~~~~~
+../Src/bootloaderCommands.c:61:11: warning: pointer targets in passing argument 1 of 'printMsg' differ in signedness [-Wpointer-sign]
+  printMsg("BL_DEBUG_MSG: MSP value = %#x\r\n", mspValue);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Inc/bootloaderCommands.h:14:0,
+                 from ../Src/bootloaderCommands.c:9:
+C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Inc/comPort.h:23:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void printMsg(uint8_t *frmt, ...);
+      ^~~~~~~~
+../Src/bootloaderCommands.c:75:11: warning: pointer targets in passing argument 1 of 'printMsg' differ in signedness [-Wpointer-sign]
+  printMsg("BL_DEBUG_MSG: appResetHandler address = %#x\r\n");
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Inc/bootloaderCommands.h:14:0,
+                 from ../Src/bootloaderCommands.c:9:
+C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Inc/comPort.h:23:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void printMsg(uint8_t *frmt, ...);
+      ^~~~~~~~
+../Src/bootloaderCommands.c: In function 'debugUART2init':
+../Src/bootloaderCommands.c:153:14: warning: pointer targets in passing argument 1 of 'printMsg' differ in signedness [-Wpointer-sign]
+     printMsg("BL_DEBUG_MSG:Invalid command doe received from host! \r\n");
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Inc/bootloaderCommands.h:14:0,
+                 from ../Src/bootloaderCommands.c:9:
+C:/Users/emirs/Desktop/STM32 CAN bootloader/stm32l467_bootloader/Inc/comPort.h:23:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void printMsg(uint8_t *frmt, ...);
+      ^~~~~~~~
+Finished building: ../Src/bootloaderCommands.c
+ 
+Building target: stm32l467_bootloader.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32L476RGTx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32l467_bootloader.elf" @"objects.list"   -lm
+Finished building target: stm32l467_bootloader.elf
+ 
+make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "stm32l467_bootloader.elf" "stm32l467_bootloader.hex"
+arm-none-eabi-size "stm32l467_bootloader.elf"
+   text	   data	    bss	    dec	    hex	filename
+  13488	    120	   1904	  15512	   3c98	stm32l467_bootloader.elf
+ 
+
+23:18:49 Build Finished (took 4s.371ms)
+

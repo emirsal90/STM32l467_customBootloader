@@ -1,0 +1,42 @@
+/*
+ * bootloaderCommands.c
+ *
+ *  Created on: 5 Mar 2019
+ *      Author: emirs
+ */
+
+
+#include "bootloaderCommands.h"
+
+
+
+bool isUserButtonPushed(void)
+{
+	if(HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin) == GPIO_PIN_RESET)
+	{
+		printMsg("Note: User Button has been pushed\r\n"
+				"Executing BootLoader Mode");
+		return true;
+	}
+	else
+	{
+		printMsg("Note: User Button has not been pushed\r\n"
+						"Executing normal application");
+		return false;
+	}
+}
+
+void bootloaderUARTreadData (void)
+{
+
+}
+
+void bootLoaderJumpToUserApp (void)
+{
+
+}
+
+void debugUART2init (void)
+{
+
+}

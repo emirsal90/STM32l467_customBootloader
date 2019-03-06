@@ -1,0 +1,23 @@
+/*
+ * comPort.h
+ *
+ *  Created on: 5 Mar 2019
+ *      Author: emirs
+ */
+
+#ifndef COMPORT_H_
+#define COMPORT_H_
+
+
+#include "stdint.h"
+#include "stm32l4xx_hal.h"
+#include "stdarg.h"
+#include "string.h"
+#include "main.h"
+#include "stdio.h"
+
+
+
+void printMsg(uint8_t *frmt, ...);
+
+#endif /* COMPORT_H_ */

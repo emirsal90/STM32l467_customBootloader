@@ -1,0 +1,23 @@
+/*
+ * comPort.c
+ *
+ *  Created on: 5 Mar 2019
+ *      Author: emirs
+ */
+
+#include "comPort.h"
+
+extern UART_HandleTypeDef huart3;
+
+void printMsg(uint8_t *frmt, ...)
+{
+	uint8_t str[80] = {0};
+
+	/*Extract the argument list using VA APIS*/
+	va_list args;
+	va_start(args, frmt);
+	vsprintf(str, frmt, args);
+	HAL_UART_Transmit(D_UART, str, strlen(str), HAL_MAX_DELAY);
+	va_end(args);
+
+}

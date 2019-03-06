@@ -1,0 +1,63 @@
+/*
+ * bootloaderCommands.c
+ *
+ *  Created on: 5 Mar 2019
+ *      Author: emirs
+ */
+
+
+#include "bootloaderCommands.h"
+
+
+
+bool isUserButtonPushed(void)
+{
+	if(HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin) == GPIO_PIN_RESET)
+	{
+		printMsg("Note: User Button has been pushed\r\n"
+				"Executing BootLoader Mode");
+		return true;
+	}
+	else
+	{
+		printMsg("Note: User Button has not been pushed\r\n"
+						"Executing normal application");
+		return false;
+	}
+}
+
+void bootloaderUARTreadData (void)
+{
+
+}
+
+/*****************************************************************************************
+ * Function to jump yo user application
+ * Arguments: none
+ * Returns: none
+ * Assuming the FLASH_SECTOR2_BASE_ADDRESS is where the
+ * user application is stored
+ *****************************************************************************************/
+void bootLoaderJumpToUserApp (void)
+{
+	//define a function pointer to hold the adress of the RESET Handler of the user app.
+	void (*appResetHandler) (void);
+	printMsg("BL_DEBUG_MSG: bootLoaderJumpToUserApp \r\n");
+
+	//configure the MSP by  reading the value from the base address of sector 2 0x0800-0000
+	//Assume the FLASH_SECTOR2_BASE_ADDRESS is the adress where user application is stored
+	uint32_t mspValue = *(volatile uint32_t *) FLASH_SECTOR2_BASE_ADDRESS;
+	printMsg("BL_DEBUG_MSG: MSP value = %#\r\n", mspValue);
+
+	//cmsis function to set the Main Stack Pointer Value
+	__set_MSP(mspValue);
+
+	//SCB->VTOR = FLASH_SECTOR1_BASE_ADDRESS;
+
+
+}
+
+void debugUART2init (void)
+{
+
+}
